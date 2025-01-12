@@ -1,0 +1,43 @@
+# Fichiers de configuration locaux
+*.log
+*.bak
+*.swp
+
+# Dossiers spécifiques au système
+.DS_Store
+Thumbs.db
+
+# Clés SSH ou fichiers sensibles
+*.pem
+*.key
+*.crt
+.ssh/
+
+# Fichiers générés par Vagrant
+.vagrant/
+Vagrantfile.bak
+
+# Dossiers de données Docker
+data/
+
+# Secrets potentiels ou configurations sensibles
+.env
+*.enc
+
+# Cache et fichiers temporaires
+__pycache__/
+*.pyc
+*.pyo
+*.tmp
+
+# Historique ou sauvegardes
+*.old
+*.save
+
+# Mes ajouts
+secretbri.yml
+prototype1.yml
+prototype2.yml
+prototype3.yml
+
+

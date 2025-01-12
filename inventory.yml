@@ -1,0 +1,18 @@
+all: # Groupe global qui contient tous les hôtes (serveurs) définis
+  hosts: # Définition des hôtes appartenant à ce groupe
+    vagrant-server: # Alias pour identifier la machine Vagrant
+      ansible_host: 127.0.0.1 # Adresse IP pour l'accès SSH (127.0.0.1 en raison du port forwarding)
+      ansible_port: 2222 # Port utilisé pour l'accès SSH
+      ansible_user: vagrant # Nom d'utilisateur utilisé pour SSH
+      ansible_become: true # Permet d'utiliser des privilèges sudo pour certaines tâches
+      ansible_become_method: sudo # Spécifie que l'élévation de privilèges utilise sudo
+      ansible_ssh_private_key_file: /home/sabri/Documents/projet_ansible/.vagrant/machines/default/virtualbox/private_key # Clé privée SSH générée par Vagrant
+      ansible_python_interpreter: /usr/bin/python3 # Chemin vers l'interpréteur Python sur la machine Vagrant
+
+    vps-server: # Exemple pour le VPS Ubuntu (si nécessaire)
+      ansible_host: "{{ vps_server_ip }}"  # ajouter votre adresse IP publique du VPS
+      ansible_user: ubuntu # Nom d'utilisateur par défaut pour Ubuntu
+      ansible_become: true # Permet d'utiliser des privilèges sudo
+      ansible_become_method: sudo
+      ansible_ssh_private_key_file: "{{ vps_ssh_key_path }}" # ajouter le chemin vers votre clé SSH
+      ansible_python_interpreter: /usr/bin/python3 # Interpréteur Python sur Ubuntu
